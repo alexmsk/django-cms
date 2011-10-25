@@ -1,8 +1,8 @@
 from django.conf import settings
 from cms.utils import cms_static_url
 
-# Uses TinyMCE as editor (no inline plugins). Requires django-tinymce app. 
-# If false, then WYMEditor is used. 
+# Uses TinyMCE as editor (no inline plugins). Requires django-tinymce app.
+# If false, then WYMEditor is used.
 USE_TINYMCE = getattr(settings, 'CMS_USE_TINYMCE', "tinymce" in settings.INSTALLED_APPS)
 
 if USE_TINYMCE:
@@ -22,10 +22,10 @@ WYM_TOOLS = ",\n".join([
     "{'name': 'Redo', 'title': 'Redo', 'css': 'wym_tools_redo'}",
     "{'name': 'Paste', 'title': 'Paste_From_Word', 'css': 'wym_tools_paste'}",
     "{'name': 'ToggleHtml', 'title': 'HTML', 'css': 'wym_tools_html'}",
-    #"{'name': 'CreateLink', 'title': 'Link', 'css': 'wym_tools_link'}",
-    #"{'name': 'Unlink', 'title': 'Unlink', 'css': 'wym_tools_unlink'}",
+    "{'name': 'CreateLink', 'title': 'Link', 'css': 'wym_tools_link'}",
+    "{'name': 'Unlink', 'title': 'Unlink', 'css': 'wym_tools_unlink'}",
     #"{'name': 'InsertImage', 'title': 'Image', 'css': 'wym_tools_image'}",
-    #"{'name': 'InsertTable', 'title': 'Table', 'css': 'wym_tools_table'}",
+    "{'name': 'InsertTable', 'title': 'Table', 'css': 'wym_tools_table'}",
     #"{'name': 'Preview', 'title': 'Preview', 'css': 'wym_tools_preview'}",
 ])
 
@@ -43,14 +43,14 @@ WYM_CONTAINERS = ",\n".join([
     "{'name': 'BLOCKQUOTE', 'title': 'Blockquote', 'css': 'wym_containers_blockquote'}",
     "{'name': 'TH', 'title': 'Table_Header', 'css': 'wym_containers_th'}",
 ])
-    
+
 WYM_CONTAINERS = getattr(settings, "WYM_CONTAINERS", WYM_CONTAINERS)
 
 WYM_CLASSES = ",\n".join([
     "{'name': 'date', 'title': 'PARA: Date', 'expr': 'p'}",
     "{'name': 'hidden-note', 'title': 'PARA: Hidden note', 'expr': 'p[@class!=\"important\"]'}",
 ])
-    
+
 WYM_STYLES = ",\n".join([
     "{'name': '.hidden-note', 'css': 'color: #999; border: 2px solid #ccc;'}",
     "{'name': '.date', 'css': 'background-color: #ff9; border: 2px solid #ee9;'}",
